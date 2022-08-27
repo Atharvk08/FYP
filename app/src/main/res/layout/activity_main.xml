@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:transitionGroup="true"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="SMART COOLER"
+        android:textColor="#ff7aff24"
+        android:textSize="35dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:theme="@style/Base.TextAppearance.AppCompat" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_below="@+id/imageView"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/buttonTurnOn"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_toStartOf="@+id/imageView"
+            android:layout_toLeftOf="@+id/imageView"
+            android:clickable="true"
+            android:onClick="on"
+            android:text="Turn On" />
+
+        <Button
+            android:id="@+id/buttonGetTurnOn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/buttonTurnOn"
+
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="4dp"
+            android:onClick="visible"
+            android:text="Get visible" />
+
+        <Button
+            android:id="@+id/buttonListDevices"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView"
+            android:onClick="list"
+            android:text="List devices" />
+
+        <Button
+            android:id="@+id/buttonTurnOff"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/buttonTurnOn"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="4dp"
+            android:onClick="off"
+            android:text="turn off" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_below="@+id/linearLayout"
+            android:layout_alignStart="@+id/listView"
+            android:layout_alignLeft="@+id/listView"
+            android:text="Paired devices: "
+            android:textColor="#ff34ff06"
+            android:textSize="25dp" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:prompt="Pair Device" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/linearLayout2"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textView_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Temperature: "
+                android:textColor="#ff34ff06"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView_temp_reading"
+                android:layout_width="90dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text=" C"
+                android:textAlignment="center"
+                android:textSize="22dp" />
+
+            <TextView
+                android:id="@+id/textView_Automatic_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Automatic: "
+                android:textAlignment="center"
+                android:textColor="@color/purple_700"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button_automatic_status_show"
+                android:layout_width="20dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="6dp"
+                android:backgroundTint="@color/teal_700" />
+            <!--        <TextView-->
+            <!--            android:id="@+id/textView_temp_automatic_status"-->
+            <!--            android:layout_width="fill_parent"-->
+            <!--            android:textAlignment="center"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginTop="4dp"-->
+            <!--            android:text="ON"-->
+            <!--            android:textSize="22dp" />-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textView_humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Humditiy: "
+                android:textColor="#ff34ff06"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView_humidity_reading"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text=" RH"
+                android:textAlignment="center"
+                android:textSize="22dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textView_fanSpeed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Fan Speed: "
+                android:textColor="#ff34ff06"
+                android:textSize="22dp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/button_speed_low"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="LOW" />
+
+            <Button
+                android:id="@+id/button_speed_medium"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:text="MED" />
+
+            <Button
+                android:id="@+id/button_speed_high"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:text="HIGH" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/textView_waterLevelTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Water Level: "
+                android:textColor="#ff34ff06"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView_waterLevel"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text=""
+                android:textAlignment="center"
+                android:textSize="22dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+<!--    <ListView-->
+<!--        android:id="@+id/listView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_below="@+id/linearLayout2"-->
+<!--        android:layout_alignStart="@+id/linearLayout"-->
+<!--        android:layout_alignLeft="@+id/linearLayout" />-->
+
+
+
+</RelativeLayout>
