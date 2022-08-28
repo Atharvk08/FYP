@@ -1,10 +1,12 @@
 package com.example.testfyp;
 
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -20,7 +22,7 @@ import java.util.Set;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     Button buttonTurnOn,buttonGetTurnOn,buttonListDevices,buttonTurnOff;
-
+    Button buttonSpeedLow,buttonSpeedHigh,buttonSpeedMedium,buttonTempAutomatic;
     private BluetoothAdapter BA;
     private Set<BluetoothDevice> pairedDevices;
     ListView lv;
@@ -36,6 +38,12 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         buttonGetTurnOn=(Button)findViewById(R.id.buttonGetTurnOn);
         buttonListDevices=(Button)findViewById(R.id.buttonListDevices);
         buttonTurnOff=(Button)findViewById(R.id.buttonTurnOff);
+
+        buttonTempAutomatic=(Button)findViewById(R.id.button_automatic_status_show);
+        buttonSpeedLow=(Button)findViewById(R.id.button_speed_low);
+        buttonSpeedHigh=(Button)findViewById(R.id.button_speed_medium);
+        buttonSpeedMedium=(Button)findViewById(R.id.button_speed_high);
+
 
         BA= BluetoothAdapter.getDefaultAdapter();
         lv=(ListView) findViewById(R.id.listView);
@@ -97,4 +105,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         //do nothing
     }
 
+
+    public void automaticButton(View v){
+
+    }
 }

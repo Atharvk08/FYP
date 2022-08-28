@@ -159,7 +159,7 @@
                 android:layout_width="20dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="6dp"
-                android:backgroundTint="@color/teal_700" />
+                android:background="@drawable/bg_button" />
             <!--        <TextView-->
             <!--            android:id="@+id/textView_temp_automatic_status"-->
             <!--            android:layout_width="fill_parent"-->
